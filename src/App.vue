@@ -37,6 +37,16 @@ export default {
       topics: this.topics
     };
   },
+  mounted() {
+    setTimeout(() => {
+      this.topics.push({
+        id: 'events',
+        title: 'Events',
+        description: 'Events are important in vue',
+        fullText: 'Events allow you to trigger code on demand!'
+      });
+    }, 3000);
+  },
   methods: {
     activateTopic(topicId) {
       this.activeTopic = this.topics.find(topic => topic.id === topicId);
